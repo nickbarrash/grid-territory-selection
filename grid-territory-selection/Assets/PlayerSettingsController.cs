@@ -34,4 +34,12 @@ public class PlayerSettingsController : MonoBehaviour
     public bool IsValid() {
         return nameInput.text.Length > 0 && IsValidColor();
     }
+
+    public Color myColor() {
+        return colorDisplay.color;
+    }
+
+    public string myName() {
+        return nameInput.text;
+    }
 }

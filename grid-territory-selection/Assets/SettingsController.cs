@@ -15,12 +15,19 @@ public class SettingsController : MonoBehaviour
         playerSettings = transform.Find("PlayersSettings").GetComponent<PlayersInitController>();
     }
 
+    private void Start() {
+        UpdatePlayButton();
+    }
+
     // Update is called once per frame
     void Update()
     {
         if (Time.frameCount % 60 == 0) {
-            Debug.Log(playerSettings.IsValid());
-            playButton.interactable = playerSettings.IsValid();
+            UpdatePlayButton();
         }
+    }
+
+    void UpdatePlayButton() {
+        playButton.interactable = playerSettings.IsValid();
     }
 }
